@@ -1,0 +1,59 @@
+{
+  "name": "ftl-data-api",
+  "version": "0.0.1",
+  "description": "The backend for FTL data app",
+  "author": "Matt Barfoot",
+  "private": true,
+  "scripts": {
+    "watch": "NODE_ENV=development nodemon app.js --exec",
+    "test": "NODE_ENV=testing jest --forceExit",
+    "build": "NODE_ENV=production babel src -d build && npm run pretty",
+    "pretty": "prettier --write --print-width 80 --single-quote --trailing-comma es5 --tab-width 4 --no-semi 'src/**/*.js' 'tests/**/*.js'",
+    "start-production": "NODE_ENV=production pm2 start ecosystem.json",
+    "clean": "npm cache clean --force"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/mjbarfoot/ftl-data#readme",
+  "dependencies": {
+    "@hapi/joi": "^17.1.0",
+    "@sendgrid/mail": "^6.5.3",
+    "axios": "^0.19.2",
+    "bcrypt": "^4.0.0",
+    "dotenv": "^8.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "kcors": "^2.2.2",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-json-error": "^3.1.2",
+    "koa-router": "^8.0.8",
+    "koa-useragent": "^4.0.0",
+    "log4js": "^6.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.6"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "safari >= 7"
+            ]
+          }
+        }
+      ]
+    ]
+  },
+  "keywords": [
+    "ftl"
+  ],
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
