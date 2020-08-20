@@ -18,7 +18,7 @@
     "@hapi/joi": "^17.1.0",
     "@sendgrid/mail": "^6.5.3",
     "axios": "^0.19.2",
-    "bcrypt": "^4.0.0",
+    "bcrypt": "^5.0.0",
     "dotenv": "^8.2.0",
     "jsonwebtoken": "^8.5.1",
     "kcors": "^2.2.2",
